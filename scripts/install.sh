@@ -56,9 +56,9 @@ function install {
 	*) fail "unknown os: $(uname -s)";;
 	esac
 	# find ARCH
-	if uname -m | grep 64 > /dev/null; then
+	if uname -m | grep amd64 > /dev/null; then
 		ARCH="amd64"
-	elif uname -m | grep arm > /dev/null; then
+	elif uname -m | grep 'arm\|aarch64' > /dev/null; then
 		ARCH="arm"
 	else
 		fail "unknown arch: $(uname -m)"
